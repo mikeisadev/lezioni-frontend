@@ -1,0 +1,75 @@
+/* RESET CSS */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Stili generali */
+body {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+h1 {
+    text-align: center;
+    margin: 10px;
+}
+
+/* 
+   Classi indipendenti 
+   per definire un tipo di galleria 
+   
+   1) MODALITà GALLERY RESPONSIVE
+
+   .gallery-flex è una modalità per 
+   visualizzare una galleria con la flexbox
+*/
+.gallery-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+/*
+    2) MODALITà GALLERY SCROLLABILE
+
+    .gallery-scroll usa le proprietà white-space
+    per affiancare tutti gli elementi della galleria e
+    "overflow-x: scroll" per creare una galleria scrollabile.
+*/
+.gallery-scroll {
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+.gallery-scroll .image {
+    display: inline-block;
+}
+
+/* Regole generali della galleria */
+.gallery .image {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.gallery .image img {
+    width: 180px;
+}
+
+.gallery .image .image-title {
+    position: absolute;
+    bottom: 0px;
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.788);
+    width: 100%;
+    height: 36px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: 600;
+    font-size: 14px;
+}

@@ -11,8 +11,12 @@ h1 {
     font-size: 24px;
 }
 
-/* Flex box su classe container */
-.container-1 {
+/* 
+  Flex box su classe container 
+  
+  Stile per il contenitore 1
+*/
+.container-1 { 
     display: flex;
 
     justify-content: center;
@@ -28,6 +32,9 @@ h1 {
     height: 200px;
 }
 
+/*
+    Stile per il contenitore 2
+*/
 .container-2 {
     display: flex;
 
@@ -41,7 +48,44 @@ h1 {
     background-color: cornflowerblue;
     padding: 20px;
 
-    height: 800px;
+    height: 600px;
+
+    margin-bottom: 20px;
+}
+
+/*
+   Stile per il contenitore 3
+*/
+.container-3 {
+    display: flex;
+
+    flex-wrap: wrap;
+    align-content: center;
+
+    gap: 10px;
+
+    justify-content: center;
+
+    background-color: cornflowerblue;
+    padding: 20px;
+
+    height: 400px;
+
+    margin-bottom: 20px;
+}
+
+/* Inline flex */
+.container-4 {
+    display: inline-flex;
+    gap: 10px;
+
+    background-color: cornflowerblue;
+    padding: 20px;
+}
+
+.container-4 .card {
+    width: 50px;
+    height: 50px;
 }
 
 /* Stile card */
