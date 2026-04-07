@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- 
+        Contenitore per capire la griglia in CSS.
+
+        Comando emmet: div.griglia>div.cell{$}*5
+    -->
+    <h1>Esempio di griglia (proprietà grid CSS)</h1>
+    <div class="griglia">
+        <div class="cell">1</div>
+        <div class="cell">2</div>
+        <div class="cell">3</div>
+        <div class="cell">4</div>
+        <div class="cell">5</div>
+        <div class="cell">6</div>
+        <div class="cell">7</div>
+        <div class="cell">8</div>
+        <div class="cell">9</div>
+    </div>
+
+    <!--
+        Lista di contatti usando Grid
+    -->
+    <h1>Lista contatti</h1>
+
+    <div class="griglia-contatti">
+
+        <!-- Colonne -->
+        <div class="cell colonna">Nome</div>
+        <div class="cell colonna">Cognome</div>
+        <div class="cell colonna">Numero di telefono</div>
+        <div class="cell colonna">Azioni</div>
+
+        <!-- Riga 1 -->
+        <div class="cell">Michele</div>
+        <div class="cell">Mincone</div>
+        <div class="cell">+39 555 555 5555</div>
+        <div class="cell">
+            <button>Aggiorna</button>
+            <button>Elimina</button>
+            <button>Duplica</button>
+        </div>
+
+        <!-- Riga 2 -->
+        <div class="cell">Francesco</div>
+        <div class="cell">Mincone</div>
+        <div class="cell">+39 555 555 5555</div>
+        <div class="cell">
+            <button onclick="alert('Mi hai appena cliccato');">Aggiorna</button>
+            <button>Elimina</button>
+            <button>Duplica</button>
+        </div>
+
+    </div>
+
+</body>
+</html>
