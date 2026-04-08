@@ -1,0 +1,45 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .menu ul {
+    display: flex;
+    list-style-type: none;
+    gap: 12px;
+}
+
+.hero-banner {
+    background-color: #f37121;
+
+    height: 300px;
+    width: 100%;
+
+    padding: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-banner .inner-content {
+    text-align: center;
+}
+
+.container {
+    display: flex;    
+    flex-direction: column;
+    text-align: center;
+}
+
+.container .inner-content {
+    display: flex;
+    gap: 15px;
+}
+
+.box {
+    border: 2px solid rgb(63, 63, 63);
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+    text-align: center;
+}
