@@ -1,3 +1,9 @@
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+} 
+
 header {
     display: flex;
     justify-content: space-between;
@@ -31,15 +37,48 @@ header .menu ul {
     display: flex;    
     flex-direction: column;
     text-align: center;
+    padding: 20px;
 }
 
 .container .inner-content {
     display: flex;
+    flex-direction: column;
     gap: 15px;
 }
 
 .box {
-    border: 2px solid rgb(63, 63, 63);
-    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
     text-align: center;
+    align-content: center;
+
+    border: 2px solid #003e70;
+    border-width: 0 0 0 8px;
+
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+
+    padding: 20px;
+    height: 160px;
+}
+
+/* Dal tablet in poi */
+@media (min-width: 768px) {
+    .container .inner-content {
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    .box {
+        min-width: 280px;
+        min-height: 280px;
+
+        max-width: 280px;
+        max-height: 280px;
+    }
+}
+
+@media (min-width: 1024px) {
+
+}
+
+@media (min-width: 1280px) {
+
 }
