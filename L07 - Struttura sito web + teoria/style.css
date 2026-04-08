@@ -136,6 +136,28 @@ footer {
 }
 
 /* --------------------------
+   FORM  
+   --------------------------
+*/
+form label {
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+form input, form textarea, form select {
+    width: 100%;
+    display: block;
+    padding: 6px 4px;
+    border-radius: 4px;
+    border: 1px solid black;
+}
+
+form .form-row {
+    margin-bottom: 10px;
+}
+
+/* --------------------------
    OTTIMIZZAZIONE MOBILE
    --------------------------
 */
