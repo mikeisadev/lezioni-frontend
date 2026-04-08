@@ -1,85 +1,113 @@
 <!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
     <link rel="stylesheet" href="style.css" />
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
     <!-- Testata -->
     <header id="site-header">
-        <div class="logo">
-            <h1>Logo</h1>
-        </div>
+      <div class="logo">
+        <h1>Logo</h1>
+      </div>
 
-        <div class="menu">
-            <nav>
-                <ul>
-                    <li><a href="">Chi siamo</a></li>
-                    <li><a href="">Contatti</a></li>
-                    <li><a href="">Prodotti</a></li>
-                    <li><a href="">Lavora con noi</a></li>
-                </ul>
-            </nav>
-        </div>
+      <div class="menu">
+        <nav>
+          <ul>
+            <li><a href="">Chi siamo</a></li>
+            <li><a href="">Contatti</a></li>
+            <li><a href="">Prodotti</a></li>
+            <li><a href="">Lavora con noi</a></li>
+          </ul>
+        </nav>
+      </div>
 
-        <div class="search">
-            <input type="search" placeholder="Ricerca qualcosa..." />
-        </div>
+      <div class="search">
+        <input type="search" placeholder="Ricerca qualcosa..." />
+      </div>
     </header>
 
     <!-- Corpo principale -->
     <main>
-        <!-- Hero banner - Sezione a pieno schermo -->
-        <div class="hero-banner">
+      <!-- Hero banner - Sezione a pieno schermo -->
+      <div class="hero-banner">
+        <div class="inner-content">
+          <h1>Ripara la tua auto in poco tempo</h1>
+          <p>
+            Siamo un team di esperti e siamo pronti a riparare la tua auto da
+            oggi!
+          </p>
+          <button class="btn">Scopri i servizi</button>
+        </div>
+      </div>
 
-            <div class="inner-content">
-                <h1>Ripara la tua auto in poco tempo</h1>
-                <p>Siamo un team di esperti e siamo pronti a riparare la tua auto da oggi!</p>
-                <button>Scopri i servizi</button>
-            </div>
-
+      <!-- Sezione 2 -->
+      <div class="container">
+        <div class="title-content">
+          <h2>Perché scegliere noi</h2>
         </div>
 
-        <!-- Sezione 2 -->
-        <div class="container">
-            <div class="title-content">
-                <h2>Perché scegliere noi</h2>
-            </div>
+        <div class="inner-content">
+          <div class="box">
+            <h2>Riparazioni rapide</h2>
+            <p>Siamo i più veloci sul mercato a riparare la tua auto</p>
+          </div>
 
-            <div class="inner-content">
-                <div class="box">
-                    <h2>Riparazioni rapide</h2>
-                    <p>Siamo i più veloci sul mercato a riparare la tua auto</p>
-                </div>
+          <div class="box">
+            <h2>+20 anni di esperienza</h2>
+            <p>
+              Abbiamo più di 20 anni di esperienza, un team specializzato e
+              maturo e strumenti all'avanguardia
+            </p>
+          </div>
 
-                <div class="box">
-                    <h2>+20 anni di esperienza</h2>
-                    <p>
-                        Abbiamo più di 20 anni di esperienza, un team specializzato e maturo
-                        e strumenti all'avanguardia
-                    </p>
-                </div>
-
-                <div class="box">
-                    <h2>Assicurazione sulle riparazioni</h2>
-                    <p>
-                        A sei mesi dalla riparazione ti garantiamo la massima funzione del
-                        mezzo
-                    </p>
-                </div>
-            </div>
+          <div class="box">
+            <h2>Assicurazione sulle riparazioni</h2>
+            <p>
+              A sei mesi dalla riparazione ti garantiamo la massima funzione del
+              mezzo
+            </p>
+          </div>
         </div>
+      </div>
+
+      <!-- Sezione 3 -->
+      <div class="container">
+        <div class="title-content">
+          <h2>I nostri servizi</h2>
+        </div>
+
+        <div class="inner-content">
+          <div class="servizi">
+            <!-- Colonne -->
+            <div class="cell colonna">Servizio</div>
+            <div class="cell colonna">Prezzo</div>
+
+            <!-- Riga 1 -->
+            <div class="cell">Pulizia iniettori</div>
+            <div class="cell">300€</div>
+
+            <!-- Riga 2 -->
+            <div class="cell">Cambio batteria</div>
+            <div class="cell">150€</div>
+          </div>
+        </div>
+      </div>
     </main>
 
     <!-- Piè di pagina/footer -->
     <footer>
-        <p>RiparoAuto SRL | 2026 | Privacy Policy | Cookie Policy</p>
+      <p>RiparoAuto SRL | 2026 | Privacy Policy | Cookie Policy</p>
     </footer>
-</body>
-
+  </body>
 </html>
