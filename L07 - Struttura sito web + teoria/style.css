@@ -6,7 +6,15 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-} 
+}
+
+/*---------------------------
+    IMPOSTAZIONI HTML
+  ---------------------------
+*/
+html {
+    scroll-behavior: smooth;
+}
 
 /*---------------------------
     IMPOSTAZIONI BODY
@@ -166,6 +174,9 @@ footer {
    --------------------------
 */
 .btn {
+    display: block;
+    width: max-content;
+
     background-color: #003e70;
     color: #fff;
     padding: 10px 16px;
@@ -196,6 +207,39 @@ footer {
 }
 
 /* --------------------------
+   BLOG  
+   --------------------------
+*/
+.blog-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    padding: 15px;
+    gap: 15px;
+}
+
+.blog-section .article {
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.blog-section .article .btn {
+    margin-top: 10px;
+}
+
+.blog-section .article p::first-letter {
+    font-size: 20px;
+    font-weight: bold;
+    font-family:'Times New Roman', Times, serif;
+
+    color: rgb(150, 11, 11);
+    background-color: #b3764e;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+/* --------------------------
    FORM  
    --------------------------
 */
@@ -203,6 +247,11 @@ form label {
     display: block;
     width: 100%;
     text-align: left;
+}
+
+form label::after {
+    content: " *";
+    color: red;
 }
 
 form input, form textarea, form select {
@@ -215,6 +264,10 @@ form input, form textarea, form select {
 
 form .form-row {
     margin-bottom: 10px;
+}
+
+form input[type="submit"] {
+    width: 100%;
 }
 
 /* --------------------------
