@@ -1,3 +1,8 @@
+.carousel .carousel-item img {
+    height: 100vh;
+    object-fit: cover;
+} 
+
 .overlay {
     position: absolute;
 
@@ -7,4 +12,26 @@
     bottom: 0;
     left: 0;
     right: 0;
+}
+
+.dark-feature-box {
+    background-color: rgb(43, 41, 41);
+}
+
+/* OTTIMIZZAZIONE MOBILE */
+@media (min-width: 768px) {
+    .card {
+        width: 220px !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .card {
+        width: 300px !important;
+    }
+
+    .navbar {
+        width: 900px;
+        margin: auto;
+    }
 }
