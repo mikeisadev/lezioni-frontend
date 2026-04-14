@@ -35,7 +35,7 @@ console.log( risultato );
  * utente e poi stampa nella console la presentazione.
  * 
  * - [x] Calcolo età
- * - Dire se l'utente è maggiorenne o meno
+ * - [x] Dire se l'utente è maggiorenne o meno
  */
 function presentaUtente() {
     const nome = prompt("Dimmi il tuo nome");
@@ -74,6 +74,9 @@ function daFarenheitACelsius(gradiFarenheit) {
     return (gradiFarenheit - 32) * 5/9
 }
 
+const t1 = daCelsiusAFarenheit(30);
+const t2 = daCelsiusAFarenheit(30);
+
 console.log( daFarenheitACelsius(68) )
 
 /**
@@ -82,3 +85,18 @@ console.log( daFarenheitACelsius(68) )
  * - Da celsius a kelvin
  * - da kelvin a celsius
  */
+const kelvinConv = 273.15;
+
+function daCelsiusAKelvin(gradiCelsius) {
+    return gradiCelsius + kelvinConv;
+}
+
+const tk1 = daCelsiusAKelvin(20);
+
+console.log(tk1);
+
+function daKelvinACelsius(gradiKelvin) {
+    return gradiKelvin - kelvinConv;
+}
+
+console.log( daKelvinACelsius(600) );
