@@ -15,6 +15,7 @@ const triangolo = {
     },
 
     presentazione: function() {
+        // CONCATENAZIONE CLASSICA
         return "Questo triangolo ha una base di " +
                this.base + " cm" + ", poi ha un'altezza di " +
                this.altezza + " cm e un'area di " + ((this.altezza * this.base) / 2)
@@ -22,12 +23,12 @@ const triangolo = {
     },
 
     presentazione2: function() {
+        // TEMPLATE STRING CON I BACKTICK
+        // MACOS: option + 9
+        // Windows: Alt + 96
         return `Questo triangolo ha una base di ${this.base} cm, ha un'altezza di ${this.altezza} cm e un'area di ${(this.base * this.altezza) / 2} cm`
     }
 }
-
-// MACOS: option + 9
-// Windows: Alt + 96
 
 console.log( triangolo );
 
