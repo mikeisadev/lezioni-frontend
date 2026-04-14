@@ -28,8 +28,31 @@ console.log(oggetto);
 console.log(oggetto.peso);
 console.log(oggetto["jackAudio"]);
 
+// Sovrascrivere proprietà già esistenti dell'oggetto
+oggetto.nome = "tablet";
+
 // Aggiungo una nuova proprietà (o coppia chiave-valore)
 // all'oggetto
-oggetto.aggiornamento = "Aggiornamento 04/2026 | Bug fixing, aggiornamento sicurezza";
+oggetto.informazoniGenerali = "Aggiornamento 04/2026 | Bug fixing, aggiornamento sicurezza";
 
 console.log(oggetto);
+
+/**
+ * Metodi principali per lavorare con gli oggetti.
+ * 
+ * - Object.keys -> ottenere le chiavi di un oggetto
+ * - Object.values -> ottenere i valori di un oggetto
+ * - Object.entries -> ottenere la coppia chiave-valore di un oggetto
+ */
+
+console.log(
+    Object.keys(oggetto)
+)
+
+console.log(
+    Object.values(oggetto)
+)
+
+console.log(
+    Object.entries(oggetto)
+)
