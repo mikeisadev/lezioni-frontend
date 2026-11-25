@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/typography.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+
+    <script src="assets/js/data/dipendenti.js"></script>
+    <script src="assets/js/data/contratti.js"></script>
+    <!-- <script src="assets/js/script.js"></script>-->
+    <!-- <script src="assets/js/array.js"></script>-->
+    <script src="assets/js/functions.js"></script>
+    <script src="assets/js/objects.js"></script>
+    <script src="assets/js/objects2.js"></script>
+    <script src="assets/js/fetch.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div>Logo</div>
+        <nav>
+            <ul>
+                <li>Contattaci</li>
+                <li>Chi siamo</li>
+                <li>Lavora con noi</li>
+            </ul>
+        </nav>
+        <div>Login / Registrati</div>
+    </header>
+
+    <button onclick="alert('Mi hai cliccato!')">Cliccami</button>
+
+    <!-- Main content -->
+    <main>
+        <section id="main-section">
+            <h1>IndustriaTech Gestionale CRM Aziendale</h1> <!-- il più importante -->
+            <p>Breve descrizione</p>
+
+            <div class="button-container">
+                <button>Vedi prezzi</button>
+                <button>Contattaci</button>
+            </div>
+        </section>
+
+        <!-- Tabella prezzi -->
+        <h2>Listino prezzi abbonamenti</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome abbonamento</th>
+                    <th>Prezzo</th>
+                    <th>Funzionalità incluse</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Gratuito</td>
+                    <td>0,00€/mese</td>
+                    <td>Utilizzo base, gestione dipendenti e 5 fatture al mese</td>
+                </tr>
+                <tr>
+                    <td>Pro</td>
+                    <td>19,99€/mese</td>
+                    <td>Utilizzo base, gestione dipendenti e 5 fatture al mese</td>
+                </tr>
+                <tr>
+                    <td>Max</td>
+                    <td>59,99€/mese</td>
+                    <td>Utilizzo base, gestione dipendenti e 5 fatture al mese</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Lista ricette -->
+        <h2>I nostri migliori dipendenti</h2>
+        <div id="recipes_list">
+
+        </div>
+
+        <!-- Lista dipendenti -->
+        <h2>I nostri migliori dipendenti</h2>
+        <div id="employees_list">
+
+        </div>
+
+        <!-- Form di contatto -->
+        <h2>Contattaci</h2>
+        <form>
+            <div>
+                <label class="label-std">Nome</label>
+                <input type="text">
+            </div>
+
+            <div>
+                <label class="label-std">Cognome</label>
+                <input type="text">
+            </div>
+
+            <div>
+                <label class="label-std">Email</label>
+                <input type="email">
+            </div>
+
+            <p>Per cosa ci stai contattando?</p>
+            <div>
+                <input type="radio" name="modalita-contatto">
+                <label>Assistenza tecnica</label>
+            </div>
+
+            <div>
+                <input type="radio" name="modalita-contatto">
+                <label>Rimborso</label>
+            </div>
+
+            <div>
+                <input type="radio" name="modalita-contatto">
+                <label>Richiesta informazioni</label>
+            </div>
+
+            <div>
+                <p>Il tuo messaggio</p>
+                <textarea name="" id=""></textarea>
+            </div>
+
+        </form>
+
+        <section id="special-offer-section">
+            <h2>Offerta speciale</h2>
+
+            <div class="outer-div">
+                <div class="inner-div">
+                    <h4>Ottieni industriatech gratis per 6 mesi per capire come funzionano le aziende</h4>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Copyright corso Java React - Tutti i diritti riservati</p>
+    </footer>
+
+    <script>
+        // Ciao
+        /**
+         * Questo è un commento multilinea
+         */
+        // console.log("Hello, world!");
+        // alert("Sei stato hackerato");
+    </script>
+</body>
+
+</html>

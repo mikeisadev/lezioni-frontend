@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+
+    <style>
+        .single-cell {
+            background: rgb(247, 247, 247);
+            border: 1px solid rgb(117, 117, 117);
+
+            display: flex;
+        }
+
+        .single-cell:hover {
+            border-color: black;
+            border-width: 1px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(1, 100px);
+            grid-auto-rows: 18px;
+        }
+
+        .single-card {
+            border: 1px solid black;
+            padding: 10px;
+
+            display: flex;
+            justify-content: center;
+        }
+
+        .responsive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(auto, 250px));
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Lezione "Grid" CSS</h1>
+    <p><b>Compito</b>: <u>ricreare una griglia excel con Grid</u></p>
+
+    <div class="grid-container">
+        <div class="single-cell">1</div>
+        <div class="single-cell">2</div>
+        <div class="single-cell">3</div>
+        <div class="single-cell">4</div>
+        <div class="single-cell">5</div>
+        <div class="single-cell">6</div>
+        <div class="single-cell">7</div>
+        <div class="single-cell">8</div>
+        <div class="single-cell">9</div>
+        <div class="single-cell">10</div>
+        <div class="single-cell">11</div>
+        <div class="single-cell">12</div>
+        <div class="single-cell">13</div>
+        <div class="single-cell">14</div>
+        <div class="single-cell">15</div>
+        <div class="single-cell">16</div>
+    </div>
+
+    <h2>Responsive grid</h2>
+    <div class="responsive-grid">
+        <div class="single-card">Articolo 1 n 77 n7n7cnr7cnefufrhrufrufhrhur</div>
+        <div class="single-card">Articolo 2</div>
+        <div class="single-card">Articolo 3</div>
+        <div class="single-card">Articolo 4</div>
+    </div>
+
+</body>
+
+</html>

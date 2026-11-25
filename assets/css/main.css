@@ -1,0 +1,30 @@
+/* Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fafafa;
+    -webkit-font-smoothing: antialiased;     /* testo più nitido su Mac/iOS */
+}
+
+img, video, svg {
+    max-width: 100%;       /* le immagini non escono mai dal contenitore */
+    display: block;
+}
+
+ul, ol {
+    list-style: none;      /* rimuove i pallini/numeri -- li aggiungi tu quando servono */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+

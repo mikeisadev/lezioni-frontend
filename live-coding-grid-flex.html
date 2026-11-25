@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid & Flexbox - Ottenere risultati simili</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        .article-card {
+            width: 100%;
+            padding: 20px;
+            border: 1px solid #d8dee8;
+            border-radius: 12px;
+            color: #243047;
+            font-family: Arial, sans-serif;
+            background: #fff;
+            box-shadow: 0 4px 12px rgb(36 48 71 / 10%);
+        }
+
+        .article-card__category {
+            margin: 0 0 8px;
+            color: #1769aa;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .article-card h2 {
+            margin: 0 0 10px;
+            font-size: 1.4rem;
+        }
+
+        .article-card__description {
+            margin: 0 0 16px;
+            line-height: 1.5;
+        }
+
+        .article-card__link {
+            color: #1769aa;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .article-card__link:hover {
+            text-decoration: underline;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(auto, 280px));
+            justify-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        @media (min-width: 676px) {
+            .article-card {
+                width: 280px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Lista di articoli</h1>
+
+    <p>Tecnica Flexbox</p>
+
+    <div class="flex-container">
+
+        <div class="article-card">
+            <p class="article-card__category">Web design</p>
+            <h2>Alla scoperta di Flexbox</h2>
+            <p class="article-card__description">
+                Impara a disporre gli elementi di una pagina in modo flessibile e ordinato con CSS Flexbox.
+            </p>
+            <a class="article-card__link" href="#">Leggi l'articolo</a>
+        </div>
+
+        <div class="article-card">
+            <p class="article-card__category">Web design</p>
+            <h2>Alla scoperta di Grid</h2>
+            <p class="article-card__description">
+                Impara a disporre gli elementi di una pagina in modo flessibile e ordinato con CSS Grid.
+            </p>
+            <a class="article-card__link" href="#">Leggi l'articolo</a>
+        </div>
+
+        <div class="article-card">
+            <p class="article-card__category">Web Development</p>
+            <h2>Alla scoperta di Javascript</h2>
+            <p class="article-card__description">
+                Impara le basi di Javascript
+            </p>
+            <a class="article-card__link" href="#">Leggi l'articolo</a>
+        </div>
+
+        <div class="article-card">
+            <p class="article-card__category">Web design</p>
+            <h2>Alla scoperta di React</h2>
+            <p class="article-card__description">
+                Impara a sviluppare il frontend per componenti
+            </p>
+            <a class="article-card__link" href="#">Leggi l'articolo</a>
+        </div>
+
+    </div>
+
+    <p>Tecnica grid</p>
+
+    <div class="grid-container">
+
+        <div class="article-card">
+            <p class="article-card__category">Web design</p>
+            <h2>Alla scoperta di Flexbox</h2>
+            <p class="article-card__description">
+                Impara a disporre gli elementi di una pagina in modo flessibile e ordinato con CSS Flexbox.
+            </p>
+            <a class="article-card__link" href="#">Leggi l'articolo</a>
+        </div>
+
+        <div class="article-card">
+            <p class="article-card__category">Web design</p>
+            <h2>Alla scoperta di Grid</h2>
+            <p class="article-card__description">
+                Impara a disporre gli elementi di una pagina in modo flessibile e ordinato con CSS Grid.
+            </p>
+            <a class="article-card__link" href="#">Leggi l'articolo</a>
+        </div>
+
+        <div class="article-card">
+            <p class="article-card__category">Web Development</p>
+            <h2>Alla scoperta di Javascript</h2>
+            <p class="article-card__description">
+                Impara le basi di Javascript
+            </p>
+            <a class="article-card__link" href="#">Leggi l'articolo</a>
+        </div>
+
+        <div class="article-card">
+            <p class="article-card__category">Web design</p>
+            <h2>Alla scoperta di React</h2>
+            <p class="article-card__description">
+                Impara a sviluppare il frontend per componenti
+            </p>
+            <a class="article-card__link" href="#">Leggi l'articolo</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

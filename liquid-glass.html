@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#101521">
+	<title>Liquid Glass — Menu rapido</title>
+	<style>
+		:root {
+			color-scheme: dark;
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+			--edge: rgba(255, 255, 255, .42);
+		}
+
+		* { box-sizing: border-box; }
+
+		body {
+			min-width: 320px;
+			min-height: 100vh;
+			margin: 0;
+			display: grid;
+			place-items: center;
+			overflow: hidden;
+			color: #fff;
+			background:
+				radial-gradient(ellipse at 18% 22%, rgba(80, 174, 255, .72), transparent 34%),
+				radial-gradient(ellipse at 82% 78%, rgba(176, 88, 255, .68), transparent 38%),
+				radial-gradient(ellipse at 72% 15%, rgba(255, 125, 162, .42), transparent 30%),
+				linear-gradient(135deg, #101521 8%, #20223b 52%, #111726);
+		}
+
+		body::before,
+		body::after {
+			position: fixed;
+			z-index: 0;
+			width: 42vmax;
+			height: 42vmax;
+			border-radius: 50%;
+			content: "";
+			pointer-events: none;
+			animation: drift 16s ease-in-out infinite alternate;
+		}
+
+		body::before {
+			top: -25vmax;
+			left: -12vmax;
+			background: radial-gradient(circle at 60% 65%, rgba(86, 211, 255, .56), rgba(54, 95, 235, .08) 60%, transparent 70%);
+		}
+
+		body::after {
+			right: -14vmax;
+			bottom: -28vmax;
+			background: radial-gradient(circle at 35% 35%, rgba(255, 135, 186, .54), rgba(144, 77, 255, .12) 58%, transparent 72%);
+			animation-delay: -7s;
+		}
+
+		main {
+			position: relative;
+			z-index: 1;
+			display: grid;
+			justify-items: center;
+			gap: 28px;
+			padding: 24px;
+			text-align: center;
+		}
+
+		h1 {
+			margin: 0;
+			font-size: clamp(1.05rem, 3vw, 1.35rem);
+			font-weight: 500;
+			letter-spacing: .02em;
+			text-shadow: 0 2px 18px rgba(0, 0, 0, .28);
+		}
+
+		.hint {
+			margin: -20px 0 0;
+			color: rgba(255, 255, 255, .68);
+			font-size: .88rem;
+		}
+
+		.glass-bubble {
+			position: relative;
+			display: grid;
+			width: 148px;
+			height: 148px;
+			padding: 0;
+			place-items: center;
+			border: 1px solid var(--edge);
+			border-radius: 50%;
+			outline: none;
+			color: #fff;
+			background: linear-gradient(145deg, rgba(255,255,255,.31), rgba(255,255,255,.045) 42%, rgba(255,255,255,.15));
+			box-shadow: 0 24px 70px rgba(0,0,0,.3), inset 0 1px 1px rgba(255,255,255,.72), inset 0 -12px 26px rgba(255,255,255,.08);
+			-webkit-backdrop-filter: blur(24px) saturate(180%);
+			backdrop-filter: blur(24px) saturate(180%);
+			cursor: pointer;
+			transition: width 900ms cubic-bezier(.2,.8,.2,1), height 900ms cubic-bezier(.2,.8,.2,1), border-radius 900ms cubic-bezier(.2,.8,.2,1), padding 900ms ease, box-shadow 500ms ease;
+			animation: float 3.8s ease-in-out infinite;
+			-webkit-tap-highlight-color: transparent;
+		}
+
+		.glass-bubble::before {
+			position: absolute;
+			inset: 5px;
+			border: 1px solid rgba(255,255,255,.16);
+			border-radius: inherit;
+			content: "";
+			pointer-events: none;
+		}
+
+		.glass-bubble::after {
+			position: absolute;
+			top: 10%;
+			left: 18%;
+			width: 46%;
+			height: 25%;
+			border-radius: 50%;
+			background: linear-gradient(180deg, rgba(255,255,255,.46), rgba(255,255,255,0));
+			content: "";
+			filter: blur(8px);
+			transform: rotate(-32deg);
+			pointer-events: none;
+		}
+
+		.bubble-core {
+			display: grid;
+			width: 62px;
+			height: 62px;
+			place-items: center;
+			border: 1px solid rgba(255,255,255,.32);
+			border-radius: 50%;
+			background: rgba(255,255,255,.16);
+			box-shadow: inset 0 1px 1px rgba(255,255,255,.45), 0 8px 26px rgba(0,0,0,.12);
+			transition: opacity 350ms ease, transform 500ms ease;
+		}
+
+		.bubble-core svg { width: 27px; height: 27px; }
+
+		.quick-actions {
+			position: absolute;
+			inset: 0;
+			display: flex;
+			align-items: center;
+			justify-content: space-evenly;
+			padding: 0 14px;
+			opacity: 0;
+			visibility: hidden;
+			transition: opacity 450ms ease 180ms, visibility 0s linear 900ms;
+		}
+
+		.action {
+			display: grid;
+			width: 58px;
+			height: 58px;
+			place-items: center;
+			border: 1px solid transparent;
+			border-radius: 19px;
+			color: #fff;
+			background: transparent;
+			opacity: 0;
+			transform: translateY(10px) scale(.8);
+			transition: transform 450ms cubic-bezier(.2,.8,.2,1), opacity 400ms ease, background 200ms ease, border-color 200ms ease;
+		}
+
+		.action svg { width: 24px; height: 24px; }
+
+		.glass-bubble.is-open {
+			width: min(330px, calc(100vw - 48px));
+			height: 98px;
+			padding: 8px;
+			border-radius: 34px;
+			box-shadow: 0 24px 80px rgba(0,0,0,.34), inset 0 1px 1px rgba(255,255,255,.78), inset 0 -12px 28px rgba(255,255,255,.09);
+			animation: none;
+		}
+
+		.glass-bubble.is-open .bubble-core { opacity: 0; transform: scale(.55); }
+
+		.glass-bubble.is-open .quick-actions {
+			opacity: 1;
+			visibility: visible;
+			transition-delay: 220ms, 0s;
+		}
+
+		.glass-bubble.is-open .action { opacity: 1; transform: translateY(0) scale(1); }
+		.glass-bubble.is-open .action:nth-child(2) { transition-delay: 80ms; }
+		.glass-bubble.is-open .action:nth-child(3) { transition-delay: 150ms; }
+
+		.glass-bubble:focus-visible,
+		.action:hover,
+		.action:focus-visible {
+			outline: 2px solid rgba(255,255,255,.85);
+			outline-offset: 4px;
+		}
+
+		@keyframes float {
+			0%, 100% { transform: translateY(0) scale(1); }
+			50% { transform: translateY(-9px) scale(1.025); }
+		}
+
+		@keyframes drift { to { transform: translate(8vw, 5vh) scale(1.08); } }
+
+		@media (prefers-reduced-motion: reduce) {
+			*, *::before, *::after {
+				animation-duration: .01ms !important;
+				animation-iteration-count: 1 !important;
+				transition-duration: .01ms !important;
+			}
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<h1>Un tocco di vetro liquido</h1>
+		<button class="glass-bubble" id="glassMenu" type="button" aria-label="Menu rapido" aria-expanded="false">
+			<span class="bubble-core" aria-hidden="true">
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true">
+					<path d="M5 12h14M12 5v14" />
+				</svg>
+			</span>
+			<span class="quick-actions" aria-hidden="true">
+				<span class="action" title="Condividi">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+						<circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="m8.2 10.8 7.5-4.4M8.2 13.2l7.5 4.4"/>
+					</svg>
+				</span>
+				<span class="action" title="Modifica">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+						<path d="m14 5 5 5M4 20l4.4-.9L19 8.5a2.1 2.1 0 0 0-3-3L5.4 16.1 4 20Z"/><path d="M12 20h8"/>
+					</svg>
+				</span>
+				<span class="action" title="Impostazioni">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+						<circle cx="12" cy="12" r="3"/><path d="M19.4 15a7.8 7.8 0 0 0 0-6l1.2-.9-1.2-2.1-1.4.5a7.8 7.8 0 0 0-5.2-1.5l-.3-1.5h-2.4l-.3 1.5a7.8 7.8 0 0 0-1.5.9l-1.4-.5-1.2 2.1 1.2.9a7 7 0 0 0 0 1.8l-1.2.9 1.2 2.1 1.4-.5a7.8 7.8 0 0 0 1.5.9l.3 1.5h2.4l.3-1.5a7.8 7.8 0 0 0 1.5-.9l1.4.5 1.2-2.1z" transform="translate(0 1)"/>
+					</svg>
+				</span>
+			</span>
+		</button>
+		<p class="hint" id="hint" aria-live="polite">Il menu rapido si apre tra qualche istante</p>
+	</main>
+
+	<script>
+		const menu = document.getElementById('glassMenu');
+		const hint = document.getElementById('hint');
+		let openTimer;
+
+		function setOpen(open) {
+			menu.classList.toggle('is-open', open);
+			menu.setAttribute('aria-expanded', String(open));
+			hint.textContent = open
+				? 'Condividi · Modifica · Impostazioni'
+				: 'Il menu rapido si apre tra qualche istante';
+		}
+
+		function openAfterDelay() {
+			window.clearTimeout(openTimer);
+			openTimer = window.setTimeout(() => setOpen(true), 2600);
+		}
+
+		menu.addEventListener('click', () => {
+			window.clearTimeout(openTimer);
+			setOpen(!menu.classList.contains('is-open'));
+		});
+
+		openAfterDelay();
+	</script>
+</body>
+</html>
